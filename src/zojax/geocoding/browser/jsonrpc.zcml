@@ -1,0 +1,22 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:zcml="http://namespaces.zope.org/zcml"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="zojax.quick.contenttypes"
+   >
+
+  <interface
+      interface=".interfaces.IJSONRPCLayer"
+      type="z3c.jsonrpc.interfaces.IJSONRPCSkinType"
+      name="JSONRPC.geocoding"
+      />
+
+  <z3c:jsonrpc
+      for="*"
+      class=".jsonrpc.Geocoding"
+      permission="zope.View"
+      methods="convertAddress"
+      layer="z3c.jsonrpc.layer.IJSONRPCLayer"
+      />
+
+</configure>

@@ -1,0 +1,41 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zojax="http://namespaces.zope.org/zojax"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="zojax.geocoding"
+    >
+
+  <include package="zojax.autoinclude" file="meta.zcml" />
+  <includeAllDependencies package="zojax.geocoding" extras="test" />
+
+  <includeOverrides package="zojax.geocoding.tests" file="overrides.zcml" />
+
+  <include package="zope.securitypolicy" file="meta.zcml" />
+  <include package="zope.securitypolicy" />
+
+  <securityPolicy
+      component="zope.securitypolicy.zopepolicy.ZopeSecurityPolicy"
+      />
+
+  <interface
+      name="DefaultSkin"
+      interface="zojax.geocoding.tests.tests.IDefaultSkin"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      />
+
+  <browser:defaultSkin name="DefaultSkin" />
+
+  <role id="zope.Anonymous" title="Everybody" />
+  <role id="zope.Manager" title="Site Manager" />
+
+  <grantAll role="zope.Manager" />
+
+  <grant permission="zope.View" role="zope.Anonymous" />
+
+  <unauthenticatedPrincipal id="zope.anybody" title="Unauthenticated User" />
+
+  <principal id="zope.mgr" title="Manager" login="mgr" password="mgrpw" />
+
+  <grant role="zope.Manager" principal="zope.mgr" />
+
+</configure>

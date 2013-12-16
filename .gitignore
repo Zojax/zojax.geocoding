@@ -1,36 +1,49 @@
-*.py[cod]
+# This is the repository-wide ignore file. Suffixes below are ignored
+# i.e. committing not allowed.
 
-# C extensions
-*.so
+# archives
+*.tar
+*.tar.gz
+*.tar.bz2
+*.zip
 
-# Packages
+# editors
+*.swp
+*.elc
+*.el
+*~
+*\#*\#
+
+# python
+*.pyc
+*.pyo
+*.bdf
+*.bak
+
+# folders
+bin/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+parts/
+var/
+
+# miscellaneous
+*.orig
+*.ori
+*.old
+*.svn
+*.rej
+*.tmp*
 *.egg
 *.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
+*.EGG
+*.EGG-INFO
 .installed.cfg
-lib
-lib64
-__pycache__
-
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
-.coverage
-.tox
-nosetests.xml
-
-# Translations
-*.mo
-
-# Mr Developer
 .mr.developer.cfg
-.project
 .pydevproject
+.project
+commit.txt
+

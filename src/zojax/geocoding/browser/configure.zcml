@@ -1,0 +1,33 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zojax="http://namespaces.zope.org/zojax"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="zojax.geocoding"
+    >
+
+  <!-- Configlet -->
+
+  <zojax:pagelet
+      name="index.html"
+      for="..interfaces.IGeocodingConfiglet"
+      class="zojax.controlpanel.browser.wizard.ConfigletEditWizard"
+      permission="zojax.Configure"
+      />
+
+  <zojax:pagelet
+      name="stats"
+      type="wizard.step"
+      title="Statistics"
+      for="..interfaces.IGeocodingConfiglet
+           zojax.controlpanel.browser.interfaces.IConfigletEditWizard"
+      template="stats.pt"
+      class=".configlet.GeocodingStatsView"
+      weight="300"
+      permission="zojax.Configure"
+      />
+
+  <!-- JSONRPC -->
+
+  <include file="jsonrpc.zcml" />
+
+</configure>
