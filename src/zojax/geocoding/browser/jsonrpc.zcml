@@ -2,7 +2,7 @@
    xmlns="http://namespaces.zope.org/zope"
    xmlns:zcml="http://namespaces.zope.org/zcml"
    xmlns:z3c="http://namespaces.zope.org/z3c"
-   i18n_domain="zojax.quick.contenttypes"
+   i18n_domain="zojax.geocoding"
    >
 
   <interface
