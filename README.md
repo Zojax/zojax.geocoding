@@ -4,6 +4,12 @@ zojax.geocoding
 The package converts addresses into geographic coordinates via Google Geocoding API v3 and stores the results in the cache.
 
 
+Build Status
+------------
+
+[![Build Status](http://jenkins.zojax.com/buildStatus/icon?job=zojax.geocoding)](http://jenkins.zojax.com/job/zojax.geocoding/)
+
+
 Links
 -----
 
